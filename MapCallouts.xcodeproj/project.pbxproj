@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60398FD52139F73C005C2A51 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 60398FD42139F73B005C2A51 /* ReadMe.md */; };
 		60898E85213884F3003248F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60898E84213884F3003248F3 /* AppDelegate.swift */; };
 		60898E87213884F3003248F3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60898E86213884F3003248F3 /* MapViewController.swift */; };
 		60898E8A213884F3003248F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60898E88213884F3003248F3 /* Main.storyboard */; };
@@ -23,9 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		1E6467A01E6368A000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		60398FD42139F73B005C2A51 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		60898E81213884F3003248F3 /* MapCallouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapCallouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60898E84213884F3003248F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60898E86213884F3003248F3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +36,9 @@
 		60898EBF2138A21A003248F3 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		60898EC12138A391003248F3 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		60BAE8C4214ABDD200EE21AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		85E2B56085E2B23000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B0645130B06473C000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,23 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E4BCEF01E4BCEB000000001 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
-		1E635C601E635C2000000001 /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				1E6467A01E6368A000000001 /* LICENSE.txt */,
-			);
-			name = LICENSE;
-			path = LICENSE;
-			sourceTree = "<group>";
-		};
 		60398FD62139F777005C2A51 /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,11 +66,11 @@
 		60898E78213884F3003248F3 = {
 			isa = PBXGroup;
 			children = (
-				60398FD42139F73B005C2A51 /* ReadMe.md */,
+				85E2B56085E2B23000000001 /* README.md */,
 				60898E83213884F3003248F3 /* MapCallouts */,
 				60898E82213884F3003248F3 /* Products */,
-				1E4BCEF01E4BCEB000000001 /* Configuration */,
-				1E635C601E635C2000000001 /* LICENSE */,
+				B2D0B9D0B2D0B99000000001 /* Configuration */,
+				B063BC20B0632FA000000001 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +107,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B063BC20B0632FA000000001 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				B0645130B06473C000000001 /* LICENSE.txt */,
+			);
+			name = LICENSE;
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		B2D0B9D0B2D0B99000000001 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,7 +134,7 @@
 				60898E7D213884F3003248F3 /* Sources */,
 				60898E7E213884F3003248F3 /* Frameworks */,
 				60898E7F213884F3003248F3 /* Resources */,
-				60398FD32139F610005C2A51,
+				85F00E0085F0019000000001,
 			);
 			buildRules = (
 			);
@@ -188,7 +187,6 @@
 				60BAE8C3214ABDD200EE21AA /* Localizable.strings in Resources */,
 				60898E8F213884F4003248F3 /* LaunchScreen.storyboard in Resources */,
 				60898E8C213884F4003248F3 /* Assets.xcassets in Resources */,
-				60398FD52139F73C005C2A51 /* ReadMe.md in Resources */,
 				60898E8A213884F3003248F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +241,7 @@
 /* Begin XCBuildConfiguration section */
 		60898E91213884F4003248F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -305,7 +303,7 @@
 		};
 		60898E92213884F4003248F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -361,7 +359,7 @@
 		};
 		60898E94213884F4003248F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -383,7 +381,7 @@
 		};
 		60898E95213884F4003248F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E4BC2501E4BC6B000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
