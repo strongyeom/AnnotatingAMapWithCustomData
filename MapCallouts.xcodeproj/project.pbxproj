@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		60898E81213884F3003248F3 /* MapCallouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapCallouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60898E84213884F3003248F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60898E86213884F3003248F3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -37,8 +38,7 @@
 		60898EC12138A391003248F3 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		60BAE8C4214ABDD200EE21AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		85E2B56085E2B23000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B0645130B06473C000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		8F4642BD72A8E4C16E992977 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24CEE0C37455B4B690DA3379 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
 		60398FD62139F777005C2A51 /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +77,8 @@
 				85E2B56085E2B23000000001 /* README.md */,
 				60898E83213884F3003248F3 /* MapCallouts */,
 				60898E82213884F3003248F3 /* Products */,
-				B2D0B9D0B2D0B99000000001 /* Configuration */,
-				B063BC20B0632FA000000001 /* LICENSE */,
+				24CEE0C37455B4B690DA3379 /* Configuration */,
+				E02516E5231D6A2A682671B0 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,21 +115,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B063BC20B0632FA000000001 /* LICENSE */ = {
+		E02516E5231D6A2A682671B0 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
-				B0645130B06473C000000001 /* LICENSE.txt */,
+				8F4642BD72A8E4C16E992977 /* LICENSE.txt */,
 			);
 			name = LICENSE;
 			path = LICENSE;
-			sourceTree = "<group>";
-		};
-		B2D0B9D0B2D0B99000000001 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +134,6 @@
 				60898E7D213884F3003248F3 /* Sources */,
 				60898E7E213884F3003248F3 /* Frameworks */,
 				60898E7F213884F3003248F3 /* Resources */,
-				85F00E0085F0019000000001,
 			);
 			buildRules = (
 			);
@@ -157,7 +156,7 @@
 				TargetAttributes = {
 					60898E80213884F3003248F3 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -241,7 +240,7 @@
 /* Begin XCBuildConfiguration section */
 		60898E91213884F4003248F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -291,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -303,7 +302,7 @@
 		};
 		60898E92213884F4003248F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -347,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +358,7 @@
 		};
 		60898E94213884F4003248F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -374,14 +373,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		60898E95213884F4003248F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D0AEE0B2D0A7C000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 05C6FC375BA24EE096F55F79 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -395,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.MapCallouts${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

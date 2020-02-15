@@ -54,7 +54,7 @@ class MapViewController: UIViewController {
     }
     
     private func centerMapOnSanFrancisco() {
-        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        let span = MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
         let center = CLLocationCoordinate2D(latitude: 37.786_996, longitude: -122.440_100)
         mapView.setRegion(MKCoordinateRegion(center: center, span: span), animated: true)
     }
