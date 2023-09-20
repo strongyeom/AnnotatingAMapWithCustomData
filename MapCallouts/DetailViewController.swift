@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
 
         if let image = imageView.image {
             preferredContentSize = image.size
+            
         }
     }
     

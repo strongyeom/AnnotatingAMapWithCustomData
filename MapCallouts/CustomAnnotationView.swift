@@ -15,14 +15,17 @@ class CustomAnnotationView: MKAnnotationView {
     private let maxContentWidth = CGFloat(90)
     private let contentInsets = UIEdgeInsets(top: 10, left: 30, bottom: 20, right: 20)
     
+    // 블러 이펙트
     private let blurEffect = UIBlurEffect(style: .systemThickMaterial)
     
+    // 백그라운드를 블러 처리
     private lazy var backgroundMaterial: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: blurEffect)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    // Label 과 ImageView의 스택뷰
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [labelVibrancyView, imageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +36,7 @@ class CustomAnnotationView: MKAnnotationView {
         return stackView
     }()
     
+    // 블러View위에 Label이 얹혀놓음
     private lazy var labelVibrancyView: UIVisualEffectView = {
         let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect, style: .secondaryLabel)
         let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
@@ -42,14 +46,18 @@ class CustomAnnotationView: MKAnnotationView {
         return vibrancyView
     }()
     
+    // Label
     private lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
-        label.lineBreakMode = .byWordWrapping
+        // 하나의 단어가 완전히 끝나지 않았어도 라인의 끝에 도착하면 다음 라인으로 줄을 바꾸어 나머지 문자를 계속 출력합니다. 물론 Line 속성에서 설정된 라인 수를 넘어서면 나머지 텍스트는 표시하지 않습니다.
+        label.lineBreakMode = .byCharWrapping
+        // 설정 라인을 0 으로 해서 다음 라인으로 계속 줄바꿈이 이뤄질 수 있도록 설정
         label.numberOfLines = 0
+        // preferredFont : 시스템 폰트를 사용하면 디바이스 기기에 맞게 알아서 설정됨
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
         label.translatesAutoresizingMaskIntoConstraints = false
+        // 늘어날 수 있는 최대 크기
         label.preferredMaxLayoutWidth = maxContentWidth
-        
         return label
     }()
         
@@ -80,6 +88,7 @@ class CustomAnnotationView: MKAnnotationView {
         stackView.topAnchor.constraint(equalTo: backgroundMaterial.topAnchor, constant: contentInsets.top).isActive = true
         
         // Limit how much the content is allowed to grow.
+        // imageView가 늘어날 수 있는 최대 크기 : maxContentWidth
         imageView.widthAnchor.constraint(equalToConstant: maxContentWidth).isActive = true
         labelVibrancyView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         labelVibrancyView.heightAnchor.constraint(equalTo: label.heightAnchor).isActive = true
@@ -91,12 +100,14 @@ class CustomAnnotationView: MKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Annotation도 재상용되기 때문에 prepareForReuse 메서드 호출
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
         label.text = nil
     }
     
+    // Annotation이 뷰에 표시되기 전에 호출됨
     override func prepareForDisplay() {
         super.prepareForDisplay()
         
@@ -105,9 +116,14 @@ class CustomAnnotationView: MKAnnotationView {
          so the view can be put into a known default state, and `prepareForDisplay()` right before the annotation view is displayed. This method is
          the view's oppurtunity to update itself to display content for the new annotation.
          */
+        
+        // mapkit을 import했기 때문에 annotation을 사용 할 수 있고 다운 캐스팅을 통해 CustomAnnotation 로 만들어준다.
+        
         if let annotation = annotation as? CustomAnnotation {
+            // CustomAnnotation 의 title을 label에 할당한다.
             label.text = annotation.title
             
+            // 이미지 또한 옵셔널 바인딩을 통해서 적용할 수 있다.
             if let imageName = annotation.imageName, let image = UIImage(named: imageName) {
                 imageView.image = image
                 
@@ -117,6 +133,8 @@ class CustomAnnotationView: MKAnnotationView {
                  will remain the intrinsic size of the image, resulting in extra height in the stack view that is not desired.
                  */
                 
+                
+                // ⭐️baseView의 레이아웃을 설정하면 아래코드는 작성하지 않아도 된다.⭐️
                 if let heightConstraint = imageHeightConstraint {
                     imageView.removeConstraint(heightConstraint)
                 }
@@ -128,6 +146,13 @@ class CustomAnnotationView: MKAnnotationView {
         }
         
         // Since the image and text sizes may have changed, require the system do a layout pass to update the size of the subviews.
+        // 이미지의 크기 및 레이블의 사이즈가 변경될 수도 있으므로 레이아웃을 업데이트 한다.
+        
+        // #참고#
+        /*
+         setNeedsLayout()을 통해 다음 런루프에서 레이아웃을 업데이트하도록 예약 => layoutSubViews를 통해 레이아웃 업데이트
+         즉, layoutSubViews를 쓰려면 setNeedsLayout도 항상 같이 사용해야 함
+         */
         setNeedsLayout()
     }
     
@@ -140,6 +165,8 @@ class CustomAnnotationView: MKAnnotationView {
         invalidateIntrinsicContentSize()
         
         // Use the intrinsic content size to inform the size of the annotation view with all of the subviews.
+        
+        // 말풍선 모양으로 만들 수 있는 방법 ⬇️⬇️⬇️⬇️⬇️
         let contentSize = intrinsicContentSize
         frame.size = intrinsicContentSize
         

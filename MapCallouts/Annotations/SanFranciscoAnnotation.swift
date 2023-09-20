@@ -13,7 +13,6 @@ class SanFranciscoAnnotation: NSObject, MKAnnotation {
     
     // This property must be key-value observable, which the `@objc dynamic` attributes provide.
     @objc dynamic var coordinate = CLLocationCoordinate2D(latitude: 37.779_379, longitude: -122.418_433)
-    
     // Required if you set the annotation view's `canShowCallout` property to `true`
     var title: String? = NSLocalizedString("SAN_FRANCISCO_TITLE", comment: "SF annotation")
     
